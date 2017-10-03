@@ -1,0 +1,109 @@
+\chapter{Theoretical Background}
+
+\section{Introduction}
+\nomenclature[A]{$c$}{Speed of light in a vacuum inertial system \nomunit{$299,792,458\, m/s$}}
+The analog signal $s(t)$ being send out of the pulse generator is defined as the sum of all pulses send out, and defined as
+\begin{equation}\label{eq:analog_pulse_signal}
+s(t) = \sum_{i=0}^{\infty} p(t-iT)cos(\omega_c(t-iT)),\quad i = 0,1,2,...,\infty
+\end{equation}
+
+\nomenclature[R]{$s(t)$}{Analog signal sent from pulse generator}
+\nomenclature[R]{$t$}{Global Time \nomunit{s}}
+\nomenclature[R]{$\lambda$}{Wavelength \nomunit{m}}
+
+\nomenclature[R]{$p(t)$}{Gaussian pulse}
+\nomenclature[R]{$\omega_c$}{Angular carrier frequency}
+\nomenclature[R]{$f_c$}{Carrier frequency \nomunit{Hz}}
+
+\nomenclature[R]{$f_p$}{\acrlong{prf} (\acrshort{prf}) \nomunit{Hz}}
+
+\nomenclature[R]{$T$}{Pulse Repetition Period \nomunit{s}}
+
+\nomenclature[R]{$\tau$}{Time delay \nomunit{s}}
+
+
+Where $\omega_c$ is the angular carrier frequency, defines as $\omega_c= 2 \pi f_c$ and $f_c$ is the carrier frequency. The function $p$ represents the Gaussian pulse which is defined as
+\begin{equation}
+    p(t) = \exp\left( -\frac{(t-\frac{T_p}{2})^2}{(2\sigma)^2} \right)
+\end{equation}
+Typical values of $\sigma$ and pulse duration $T_p$ are $0.2$ ns and $1$ ns respectively.
+
+\begin{equation}
+    s_i = (t_d) = p(t_d)cos(\omega_c t_d)
+\end{equation}
+\nomenclature[R]{$s_i(t_d)$}{$i$th analog pulse sent}
+\nomenclature[R]{$t_d$}{Time variable within the time interval (0,T) \nomunit{s}}
+
+Signal received by the antenna, ignoring attenuation, distortion and noise.
+
+\begin{equation}\label{eq:receiver_signal}
+    r_i(t_d) = s_i(t_d-\tau) = p(t_d-\tau)cos(\omega_c(t_d-\tau)) 
+\end{equation}
+\nomenclature[R]{$r_i(t_d)$}{$i$th analog pulse received by the antenna}
+
+where $\tau$ is given as
+\begin{equation}
+\tau = \frac{2R(t)}{c} = \frac{2R(t_d+iT)}{c}    
+\end{equation}
+
+
+Substituting equation \ref{eq:analog_pulse_signal} into equation \ref{eq:receiver_signal}.
+
+
+\section{Doppler Effect in Radar}
+
+\begin{equation}
+    f_r = \left(\frac{1+\frac{v_r}{c}}{1-\frac{v_r}{c}}\right) f_0
+\end{equation}
+where $v_r$ is the radial velocity of the scatter with respect to the source.
+\begin{equation}
+    f_r = \left[ 1+2\frac{v_r}{c} \right]
+\end{equation}
+
+Difference between the transmitted frequency $f_c$ and the received frequency $f_r$ is the Doppler shift $f_D$,
+\begin{equation}
+f_r-f_c = f_D =\frac{2v_r}{c}f_c = \frac{2 v_r}{\lambda}
+\end{equation}
+$v_r$ is positive for approaching target and negative for receding target.
+\nomenclature[R]{$v_r$}{Radial velocity of target}
+
+
+\begin{equation}
+    f_D = \frac{2v}{\lambda_0}cos \psi
+\end{equation}
+
+\section{Extraction of Doppler Information}
+
+
+
+\subsection{Video Detectors and Coherent Detectors}
+
+\begin{equation}
+s(t) = A cos(2\pi \omega )    
+\end{equation}
+
+
+\subsubsection{Mixers}
+\begin{itemize}
+    \item Combine two frequencies (mixing) and create a new frequency.
+    \item Uses a non-linear signal processing solution
+    \item Hetrodyning: shift one frequency range into another, new one
+    
+\end{itemize}
+
+\subsubsection{Complex Base-band Signal}
+
+
+
+\section{The Micro-Doppler Effect}
+
+
+\section{Tracking}
+
+Tracking consists of the following steps:
+\begin{enumerate}
+    \item plot extraction
+    \item track initiation
+    \item plot-track association
+    \item track deletion
+\end{enumerate}

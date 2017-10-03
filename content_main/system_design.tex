@@ -1,0 +1,23 @@
+\chapter{System Design}
+
+\section{Time Frequency Transform}
+
+\subsection{Frame Buffer}
+
+\begin{equation}
+\mathbf{Y}_{q,i} = 
+\begin{bmatrix}
+y_{0,0}       & y_{0,1}  & \dotsc & y_{0,M_q -1 }\\
+y_{1,0}       & y_{1,1}  & \dotsc & y_{1,M_q -1} \\
+\vdots        & \vdots   & \ddots & \vdots \\
+y_{N-1,0}     & y_{N-1,1}& \dotsc & y_{N-1,M_q-1} \\
+\end{bmatrix},\quad q = 1,2
+\end{equation}
+where
+\begin{equation}
+y_{n,m} = \Upsilon_{i-\beta+m[n], \quad  m=0,1,...,M_q-1}
+\end{equation}
+and
+\begin{equation}
+\beta = \floor*{\frac{M_q}{2}}
+\end{equation}

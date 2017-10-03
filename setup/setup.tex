@@ -1,0 +1,64 @@
+\usepackage[utf8]{inputenc} % to use input
+
+\usepackage{nomencl}
+\makenomenclature
+%% This code creates the groups
+% -----------------------------------------
+\usepackage{etoolbox}
+\renewcommand\nomgroup[1]{%
+  \item[\bfseries
+  \ifstrequal{#1}{S}{System Description}{%
+  \ifstrequal{#1}{R}{Radar configuration}{%
+  \ifstrequal{#1}{O}{Other Symbols}{}}}%
+]}
+% -----------------------------------------
+
+% This will add the units
+%----------------------------------------------
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+%----------------------------------------------
+
+
+\usepackage[margin=1in]{geometry}
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{graphicx}
+\usepackage{xcolor,colortbl}
+\usepackage{listings} % Allows code-listings
+\usepackage{wrapfig}
+\usepackage{courier} % proper monospace font for code
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{tikz} %allows us to rotate pictures, works together with rotating
+\usepackage{epstopdf}
+\usepackage{hyperref} %linking fra content  table
+\usepackage{xstring} %string-manipulation
+\usepackage{enumitem} %used for enumerate-manipulation
+\usepackage{float} %used to properly place float-objects (figures)
+\usepackage[T1]{fontenc}
+\usepackage{titlesec, blindtext, color}
+%\usepackage[norsk]{babel}
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\usepackage{ulem} %used for strikeout
+\usepackage{verbatim} %used for block-commenting
+\usepackage[toc,page]{appendix}
+%\usepackage[titletoc, title]{appendix}
+\usepackage{minted} % syntax highlithing
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{standalone} 
+\usepackage{caption}
+\usepackage{fancyhdr} % customize heareds/footers 
+
+\usepackage{mathtools} % User for floor and ceil
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\usepackage{longtable}
+\usepackage[acronym]{glossaries} % to make abbreviations
+\makeglossaries
+
+
+
+
+
